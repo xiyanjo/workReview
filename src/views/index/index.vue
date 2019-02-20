@@ -1,38 +1,40 @@
 <template>
-  <div >
+  <div>
     <div style="background:blue;">总入口页面</div>
     <div style="display:flex;flex-direction:col;">
-      <left-menu></left-menu>
-      <!-- <component :is="currentTabComponent"></component> -->
-      <!-- <keep-alive :include="['home']"> -->
-      <router-view style="border:2px solid pink"></router-view >
-      <!-- </keep-alive>  -->
+      <div style="display:flex;flex-direction:col;">
+
+        <left-menu v-if="isMenu" style="background:#eee;"></left-menu>
+        
+        <div style="width:150px">
+          <div v-show="!isMenu" @click="isMenu=true">显示</div>
+          <div v-show="isMenu" @click="isMenu=false">隐藏</div>
+        </div>
+      </div>
+      <router-view style="width:100%"></router-view>
     </div>
 
   </div>
 </template>
 
 <script>
-  import home from '@/components/home.vue'
   import leftMenu from '@/components/common/leftMenu/index.vue'
 
   export default {
     components: {
-      home,
       leftMenu
     },
     data() {
       return {
-        currentTabComponent: 'home',
+        isMenu: true,
       }
     },
     mounted() {
-      // this.$router.push('/home')
       console.log('index.');
     },
   }
 </script>
 
-<style>
+<style scoped>
 
 </style>
