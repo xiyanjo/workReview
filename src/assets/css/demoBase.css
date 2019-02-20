@@ -1,12 +1,16 @@
-.leftPad40{
-    padding-left: 40px;
+.leftPad40 {
+  padding-left: 40px;
 }
-.bottomPad15{
-    padding-bottom:15px;
+.bottomPad15 {
+  padding-bottom: 15px;
 }
-.bottomPad20{
-    padding-bottom:20px;
+.bottomPad20 {
+  padding-bottom: 20px;
 }
-.bottomPad10{
-    padding-bottom:10px;
+.bottomPad10 {
+  padding-bottom: 10px;
+}
+.flexDirectionRow {
+  display: flex;
+  flex-direction: row;
 }
