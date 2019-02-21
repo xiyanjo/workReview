@@ -10,6 +10,8 @@ const routerViewLearn=()=>import('@/components/aboutRouter/routerViewLearn.vue')
 
 const vuexPrimer=()=>import('@/components/aboutVuex/primer.vue')
 
+const faChildrenTransmission=()=>import('@/components/dataTransmission/faChildrenTransmission.vue')
+
 const routes=[
     {
         name:'index',
@@ -34,8 +36,17 @@ const routes=[
                 path:'/index/primer',
                 component:vuexPrimer,
                 children:[]
+            },{
+                name:'faChildrenTransmission',
+                path:'/index/dataTransmission/faChildrenTransmission',
+                component:faChildrenTransmission,
+                children:[]
             },
         ]
+    },{
+        path:'/',
+        component:Index,
+        children:[]
     },
 ]
 const router = new VueRouter({

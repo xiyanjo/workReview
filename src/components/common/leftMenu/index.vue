@@ -42,16 +42,23 @@
           children: [{
             name: 'primer',
             path: '/index/primer',
-            children: []
           }]
         }, {
-          name: 'aboutVuex',
-          path: '/aboutVuex3',
-          children: []
+          name: 'aboutRouter',
+          path: '/aboutRouter',
+          children: [{
+              name:'routerViewLearn',
+              path:'/index/aboutRouter/routerViewLearn',
+            }]
         },{
-          name:'routerViewLearn',
-          path:'/index/aboutRouter/routerViewLearn',
-        }]
+            name:'dataTransmission',
+            path:'/index/dataTransmission',
+            children:[{
+              name:'faChildrenTransmission',
+              path:'/index/dataTransmission/faChildrenTransmission',
+            }]
+          },
+        ]
       };
     },
     methods: {
