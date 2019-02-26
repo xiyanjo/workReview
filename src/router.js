@@ -8,7 +8,9 @@ const Index=()=>import('@/views/index/index')
 const aboutRouter=()=>import('@/components/aboutRouter/index')
 const routerViewLearn=()=>import('@/components/aboutRouter/routerViewLearn.vue')
 
+// const aboutVuex=()=>import('@/components/aboutVuex/index')
 const vuexPrimer=()=>import('@/components/aboutVuex/primer.vue')
+const watchState=()=>import('@/components/aboutVuex/watchState.vue')
 
 const faChildrenTransmission=()=>import('@/components/dataTransmission/faChildrenTransmission.vue')
 
@@ -31,17 +33,31 @@ const routes=[
                         children:[]
                     }
                 ]
-            },{
-                name:'primer',
-                path:'/index/primer',
-                component:vuexPrimer,
-                children:[]
-            },{
+            },
+            // {
+            //     name:'aboutVuex',
+            //     path:'/index/aboutVuex',
+            //     component:aboutVuex,
+            //     children:[
+                    
+            //     ]
+            // },
+            {
                 name:'faChildrenTransmission',
                 path:'/index/dataTransmission/faChildrenTransmission',
                 component:faChildrenTransmission,
                 children:[]
-            },
+            },{
+                name:'watchState',
+                path:'/index/aboutVuex/watchState',
+                component:watchState,
+                children:[]
+            },{
+                name:'primer',
+                path:'/index/aboutVuex/primer',
+                component:vuexPrimer,
+                children:[]
+            }
         ]
     },{
         path:'/',

@@ -41,8 +41,11 @@
           path: '/aboutVuex',
           children: [{
             name: 'primer',
-            path: '/index/primer',
-          }]
+            path: '/index/aboutVuex/primer',
+          },{
+            name: 'watchState',
+            path: '/index/aboutVuex/watchState',
+          },]
         }, {
           name: 'aboutRouter',
           path: '/aboutRouter',

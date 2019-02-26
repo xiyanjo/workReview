@@ -23,6 +23,7 @@
 
 <script>
   import leftMenu from '@/components/common/leftMenu/index.vue'
+  import { mapState,mapGetters,mapActions} from 'vuex'
 
   export default {
     components: {
@@ -31,8 +32,11 @@
     data() {
       return {
         isMenu: true,
-        includeCompontents:[],
+        // includeCompontents:this.$store.changeIncludeCompontents,
       }
+    },
+    computed:{
+    ...mapState(['includeCompontents']),
     },
     mounted() {
       console.log('index.');
