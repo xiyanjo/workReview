@@ -46,7 +46,15 @@
             name: 'watchState',
             path: '/index/aboutVuex/watchState',
           },]
-        }, {
+        },{  
+          name: 'cssEffect',
+          path: '/cssEffect',
+          children: [{
+            name: 'cssFilter',
+            path: '/index/cssEffect/cssFilter',
+          },]
+        }, 
+        {
           name: 'aboutRouter',
           path: '/aboutRouter',
           children: [{

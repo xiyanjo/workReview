@@ -14,6 +14,8 @@ const watchState=()=>import('@/components/aboutVuex/watchState.vue')
 
 const faChildrenTransmission=()=>import('@/components/dataTransmission/faChildrenTransmission.vue')
 
+const cssFilter=()=>import('@/components/cssEffect/cssFilter.vue')
+
 const routes=[
     {
         name:'index',
@@ -34,20 +36,15 @@ const routes=[
                     }
                 ]
             },
-            // {
-            //     name:'aboutVuex',
-            //     path:'/index/aboutVuex',
-            //     component:aboutVuex,
-            //     children:[
-                    
-            //     ]
-            // },
+
             {
                 name:'faChildrenTransmission',
                 path:'/index/dataTransmission/faChildrenTransmission',
                 component:faChildrenTransmission,
                 children:[]
-            },{
+            },
+            
+            {
                 name:'watchState',
                 path:'/index/aboutVuex/watchState',
                 component:watchState,
@@ -56,6 +53,13 @@ const routes=[
                 name:'primer',
                 path:'/index/aboutVuex/primer',
                 component:vuexPrimer,
+                children:[]
+            },
+
+            {
+                name:'cssFilter',
+                path:'/index/cssEffect/cssFilter',
+                component:cssFilter,
                 children:[]
             }
         ]
