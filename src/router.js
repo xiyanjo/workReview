@@ -16,6 +16,8 @@ const faChildrenTransmission=()=>import('@/components/dataTransmission/faChildre
 
 const cssFilter=()=>import('@/components/cssEffect/cssFilter.vue')
 
+const promiseIndex=()=>import('@/components/promiseEs6/index')
+
 const routes=[
     {
         name:'index',
@@ -60,6 +62,12 @@ const routes=[
                 name:'cssFilter',
                 path:'/index/cssEffect/cssFilter',
                 component:cssFilter,
+                children:[]
+            },
+            {
+                name:'promiseEs6',
+                path:'/index/promiseEs6/promiseIndex',
+                component:promiseIndex,
                 children:[]
             }
         ]

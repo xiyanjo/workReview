@@ -63,6 +63,8 @@ import  wuHuang from '@/assets/img/wuHuang.jpg'
 	background-position: center top;
 	background-size: cover;
 	background-attachment: fixed;
+  /* 解决左侧遮罩层无法点击问题 */
+  margin-left: 400px;
 }
  
 </style>

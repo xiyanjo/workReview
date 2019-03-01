@@ -45,7 +45,7 @@ const mutations = { //初始化改变state中数据方法
         },2000)
     },
     //actionB依赖actionA执行结果
-    actionA({ commit }){ //返回promise对象1500秒后执行resolve
+    actionA(){ //返回promise对象1500秒后执行resolve
         return new Promise((resolve,reject)=>{
             setTimeout(()=>{
                 resolve();

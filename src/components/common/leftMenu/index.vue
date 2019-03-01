@@ -46,7 +46,8 @@
             name: 'watchState',
             path: '/index/aboutVuex/watchState',
           },]
-        },{  
+        },
+        {  
           name: 'cssEffect',
           path: '/cssEffect',
           children: [{
@@ -61,7 +62,8 @@
               name:'routerViewLearn',
               path:'/index/aboutRouter/routerViewLearn',
             }]
-        },{
+        },
+        {
             name:'dataTransmission',
             path:'/index/dataTransmission',
             children:[{
@@ -69,6 +71,15 @@
               path:'/index/dataTransmission/faChildrenTransmission',
             }]
           },
+        {
+            name:'promiseIndex',
+            path:'/index/promiseEs6/promiseIndex',
+            children:[{
+              name:'promiseIndex',
+              path:'/index/promiseEs6/promiseIndex',
+            }]
+          },
+
         ]
       };
     },
