@@ -1,6 +1,6 @@
 <template>
  <div>
-     学习router-view
+    嵌套路由
  </div>
 </template>
 

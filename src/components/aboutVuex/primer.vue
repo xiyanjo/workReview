@@ -56,12 +56,12 @@ export default {
     }
   },
   watch:{
-      $route(to,from){ //跳转组件页面后，监听路由参数中对应的当前页面以及上一个页面
-        if(to.name=='book'||to.name=='my'){ // to.name来获取当前所显示的页面，从而控制该显示或隐藏footerBar组件
-           this.$store.dispatch('showFooter') // 利用派发全局state.showFooter的值来控制        }else{
-           this.$store.dispatch('hideFooter')
-        }
-      }
+      // $route(to,from){ //跳转组件页面后，监听路由参数中对应的当前页面以及上一个页面
+      //   if(to.name=='book'||to.name=='my'){ // to.name来获取当前所显示的页面，从而控制该显示或隐藏footerBar组件
+      //      this.$store.dispatch('showFooter') // 利用派发全局state.showFooter的值来控制        }else{
+      //      this.$store.dispatch('hideFooter')
+      //   }
+      // }
   },
   mounted(){
     this.$store.commit('changeIncludeCompontents','primer'); //只能缓存一个同名组件

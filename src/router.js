@@ -38,14 +38,13 @@ const routes=[
                     }
                 ]
             },
-
+            // 无潜逃路由
             {
                 name:'faChildrenTransmission',
                 path:'/index/dataTransmission/faChildrenTransmission',
                 component:faChildrenTransmission,
                 children:[]
             },
-            
             {
                 name:'watchState',
                 path:'/index/aboutVuex/watchState',

@@ -1,6 +1,10 @@
 <template>
  <div>
-    <children :fromChildTitle="title" @onChangeTitle="handleTitleChange"></children>
+
+    <div>{{'父（title）'+title}}</div>
+    <button @click="title2='newTitle2'">父（改变title2）</button>
+    <children :fromChildTitle="title"  :fromChildTitle2="title2"
+      @onChangeTitle="handleTitleChange" ></children>
   
  </div>
 </template>
@@ -10,7 +14,8 @@ import Children from '@/components/dataTransmission/components/childrenFirst.vue
  export default {
    data () {
     return {
-      title:'使用props传递title',
+      title:'*faTitle*',
+      title2:'*faTitle2*',
 
     }
    },
@@ -20,7 +25,8 @@ import Children from '@/components/dataTransmission/components/childrenFirst.vue
    methods:{
     handleTitleChange(val){
       this.title+=val;
-    }
+    },
+
    }
  }
 </script>
