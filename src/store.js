@@ -10,6 +10,7 @@ const state={   //初始化state
     ],
     actionCount:'2',
     includeCompontents:'',
+    faComponentId:'',
 };
 const getters = {   //处理state衍生状态
     filterTodos: state=>{
@@ -33,9 +34,12 @@ const mutations = { //初始化改变state中数据方法
     changeActionCount(state,arr){
         state.actionCount+=arr.name;
     },
-    changeIncludeCompontents(state,component){
+    changeIncludeCompontents(state,component){//keep-alive 缓存主页面
         state.includeCompontents=component;
-    }
+    },
+    changeFaComponentId(state,id){//父子组件传递功能中 动态切换子组件
+        state.faComponentId=id;
+    },
 };
  const actions = { //异步 调用mution中方法改变state   定义异步调用的方法
     changeActionCountAsync({ commit },arr){
@@ -47,8 +51,13 @@ const mutations = { //初始化改变state中数据方法
     //actionB依赖actionA执行结果
     actionA(){ //返回promise对象1500秒后执行resolve
         return new Promise((resolve,reject)=>{
+            let a = true;
             setTimeout(()=>{
-                resolve();
+                if(a){
+                    resolve();
+                }else{
+                    reject();
+                }
             },1500)
         })
     },
