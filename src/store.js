@@ -10,7 +10,7 @@ const state={   //初始化state
     ],
     actionCount:'2',
     includeCompontents:'',
-    faComponentId:'',
+    faComponentId:'noPropEle',
 };
 const getters = {   //处理state衍生状态
     filterTodos: state=>{
