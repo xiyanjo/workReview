@@ -23,11 +23,19 @@
         </ul>
       </template>
       <!-- 动态组件 非prop属性 $attr传参 -->
-      <component style="background:#e4bdf1" :is="faComponentId" :size="size" :tabDatas="tabDatas"
-      :dynamicAttrsData="dynamicAttrsData" ></component>
+      <!-- v-on:focus.native="onFocus---根元素内为input时不能监听" -->
+      <component style="background:#e4bdf1" :is="faComponentId" :size="size" :formData="formData" :tabDatas="tabDatas"
+        :dynamicAttrsData="dynamicAttrsData" @input="onInput" @blur="onBlur" @change="onChange"></component>
     </template>
 
     <div class="line"></div>
+
+    <!-- element-ui 模拟学习 -->
+    <!-- <template> 
+      <div>
+        <el-input v-model="formData.value" @input="onInput"></el-input>
+      </div>
+    </template> -->
 
     <template style="color:blue">
       1 prop:父中数据改变--子改变，子改变父---事件传递给父（不可以直接改变）
@@ -40,6 +48,7 @@
       <p>
         1 动态组件如何注册 Vue.component('aa',()=>import('@/components/'+aa+'.vue')) ---ok---
         2 $attrs---可以放在任意元素上--可以取到所有非prop属性的对象
+        3 $listeners ---- 在组件根元素上监听或改写组件内input事件
       </p>
 
       <div class="line"></div>
@@ -49,6 +58,7 @@
         2 动态组件传参问题: a)使用非prop传参-—--$attrs统一获取
         3 非prop属性如何使用？
         3 less文件加载问题？
+        4 组件 表单 输入框验证如何写
       </p>
     </template>
 
@@ -74,8 +84,15 @@
           name: 'noPropEle',
         }, {
           name: 'noPropRoot',
+        }, {
+          name: 'listenerInput',
         }],
         dynamicAttrsData: 'dynamicAttrsData',
+        formData: {
+          label: '姓名',
+          value: '',
+        },
+        inputVal: ''
 
       }
     },
@@ -98,8 +115,19 @@
       registerComponent(templateName) {
         Vue.component(templateName, () => import("@/components/dataTransmission/components/" + templateName + ".vue"));
       },
+      // 格式input
+      onInput(val) {
+        console.log('onInput', val);
+        this.$set(this.formData, 'value', val + 'aa')
+      },
+      onBlur(val) {
+        console.log('onBlur', val);
+      },
+      onChange(val) {
+        console.log('onChange', val);
+      }
     },
-    created(){
+    created() {
       this.registerComponent(this.faComponentId);
     }
   }
