@@ -19,6 +19,8 @@ const cssBaseDemo=()=>import('@/components/cssEffect/cssBaseDemo.vue')
 
 const promiseIndex=()=>import('@/components/promiseEs6/index')
 
+const basePrint=()=>import('@/components/print/basePrint')
+
 const routes=[
     {
         name:'index',
@@ -39,7 +41,7 @@ const routes=[
                     }
                 ]
             },
-            // 无潜逃路由
+            // 无嵌套路由
             {
                 name:'faChildrenTransmission',
                 path:'/index/dataTransmission/faChildrenTransmission',
@@ -74,6 +76,11 @@ const routes=[
                 name:'promiseEs6',
                 path:'/index/promiseEs6/promiseIndex',
                 component:promiseIndex,
+                children:[]
+            }, {
+                name:'basePrint',
+                path:'/index/print/basePrint',
+                component:basePrint,
                 children:[]
             }
         ]

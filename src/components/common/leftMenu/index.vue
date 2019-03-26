@@ -76,11 +76,19 @@
             }]
           },
         {
-            name:'promiseIndex',
+            name:'promiseEs6',
             path:'/index/promiseEs6/promiseIndex',
             children:[{
               name:'promiseIndex',
               path:'/index/promiseEs6/promiseIndex',
+            }]
+          },
+        {
+            name:'print',
+            path:'/index/print',
+            children:[{
+              name:'basePrint',
+              path:'/index/print/basePrint',
             }]
           },
 
