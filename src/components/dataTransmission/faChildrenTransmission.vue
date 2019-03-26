@@ -47,15 +47,15 @@
       <div>已解决问题：</div>
       <p>
         1 动态组件如何注册 Vue.component('aa',()=>import('@/components/'+aa+'.vue')) ---ok---
-        2 $attrs---可以放在任意元素上--可以取到所有非prop属性的对象
-        3 $listeners ---- 在组件根元素上监听或改写组件内input事件
+        2 $listeners ---- 在组件根元素上监听或改写组件内input事件，解决：在子组件中使用listener
+        3 动态组件传参问题: a)使用非prop传参-—--$attrs统一获取（$attrs---可以放在任意元素上--可以取到所有非prop属性的对象）
+      
       </p>
 
       <div class="line"></div>
 
       <div> 待解决问题：</div>
-      <p>
-        2 动态组件传参问题: a)使用非prop传参-—--$attrs统一获取
+      <p style="color:red">
         3 非prop属性如何使用？
         3 less文件加载问题？
         4 组件 表单 输入框验证如何写
@@ -92,8 +92,6 @@
           label: '姓名',
           value: '',
         },
-        inputVal: ''
-
       }
     },
     components: {

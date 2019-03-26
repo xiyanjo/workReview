@@ -53,7 +53,11 @@
           children: [{
             name: 'cssFilter',
             path: '/index/cssEffect/cssFilter',
-          },]
+          },{
+                name:'cssBaseDemo',
+                path:'/index/cssEffect/cssBaseDemo',
+            },
+          ]
         }, 
         {
           name: 'aboutRouter',

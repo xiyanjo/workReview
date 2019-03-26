@@ -15,6 +15,7 @@ const watchState=()=>import('@/components/aboutVuex/watchState.vue')
 const faChildrenTransmission=()=>import('@/components/dataTransmission/faChildrenTransmission.vue')
 
 const cssFilter=()=>import('@/components/cssEffect/cssFilter.vue')
+const cssBaseDemo=()=>import('@/components/cssEffect/cssBaseDemo.vue')
 
 const promiseIndex=()=>import('@/components/promiseEs6/index')
 
@@ -61,6 +62,12 @@ const routes=[
                 name:'cssFilter',
                 path:'/index/cssEffect/cssFilter',
                 component:cssFilter,
+                children:[]
+            },
+            {
+                name:'cssBaseDemo',
+                path:'/index/cssEffect/cssBaseDemo',
+                component:cssBaseDemo,
                 children:[]
             },
             {
