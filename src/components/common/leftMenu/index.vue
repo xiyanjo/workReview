@@ -81,10 +81,16 @@
             children:[{
               name:'promiseIndex',
               path:'/index/promiseEs6/promiseIndex',
-            },{
+            },
+            {
               name:'jiegou',
               path:'/index/promiseEs6/jiegou',
-            }]
+            },
+            {
+              name:'symbol',
+              path:'/index/promiseEs6/symbol',
+            },
+            ]
           },
         {
             name:'print',

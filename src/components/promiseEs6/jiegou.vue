@@ -1,10 +1,6 @@
 <template>
  <div>
      <div>解构赋值</div>
-
-
-
-
  </div>
 </template>
 
