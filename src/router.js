@@ -18,6 +18,7 @@ const cssFilter=()=>import('@/components/cssEffect/cssFilter.vue')
 const cssBaseDemo=()=>import('@/components/cssEffect/cssBaseDemo.vue')
 
 const promiseIndex=()=>import('@/components/promiseEs6/index')
+const jiegou=()=>import('@/components/promiseEs6/jiegou')
 
 const basePrint=()=>import('@/components/print/basePrint')
 
@@ -77,7 +78,14 @@ const routes=[
                 path:'/index/promiseEs6/promiseIndex',
                 component:promiseIndex,
                 children:[]
-            }, {
+            }, 
+            {
+                name:'jiegou',
+                path:'/index/promiseEs6/jiegou',
+                component:jiegou,
+                children:[]
+            }, 
+            {
                 name:'basePrint',
                 path:'/index/print/basePrint',
                 component:basePrint,
