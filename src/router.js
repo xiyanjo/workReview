@@ -20,6 +20,7 @@ const cssBaseDemo=()=>import('@/components/cssEffect/cssBaseDemo.vue')
 const promiseIndex=()=>import('@/components/promiseEs6/index')
 const jiegou=()=>import('@/components/promiseEs6/jiegou')
 const symbol=()=>import('@/components/promiseEs6/Symbol')
+const setMap=()=>import('@/components/promiseEs6/setMap')
 
 const basePrint=()=>import('@/components/print/basePrint')
 
@@ -90,6 +91,12 @@ const routes=[
                 name:'symbol',
                 path:'/index/promiseEs6/symbol',
                 component:symbol,
+                children:[]
+            }, 
+            {
+                name:'setMap',
+                path:'/index/promiseEs6/setMap',
+                component:setMap,
                 children:[]
             }, 
             {

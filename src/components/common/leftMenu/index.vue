@@ -90,6 +90,10 @@
               name:'symbol',
               path:'/index/promiseEs6/symbol',
             },
+            {
+              name:'setMap',
+              path:'/index/promiseEs6/setMap',
+            },
             ]
           },
         {
