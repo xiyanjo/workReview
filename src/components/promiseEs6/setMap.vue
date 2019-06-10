@@ -51,6 +51,8 @@
        * delete()--移除某个元素
        * clear()---移除所有集合元素
        * forEach() 参数--index,与第一个参数一样的值，set本身 （其他与数组的forEach相同）
+       * set--适合跟踪多个元素，不能直接通过索引访问，需要转为数组
+       * set 强引用
        */
       es6Set(){
           let set = new Set(),key1={},key2={};
@@ -61,7 +63,9 @@
           set.add(5);//传入相同值会被忽略
           console.log('set',set.size);
 
-          let setArr = new Set([1,2,3,2,2,2]);
+          key1=null;//set内还有引用
+
+          let setArr = new Set([1,2,3,2,2,2]); // array 转set
           console.log('setArr',setArr.size);
           console.log( setArr.has(4));
           setArr.forEach((index,ind,set)=>{
@@ -69,11 +73,66 @@
           })
         //   setArr.delete(3);
         //   setArr.clear();
+        
+        let toArr = [...setArr];// set转array
+        console.log('toArr',toArr);
+        console.log('[...setArr][0]',[...setArr][0]);
+      },
+      /**
+       * Weak Set 弱引用Set集合
+       * 存储对象的弱引用，不可以存储原始值，集合中的弱引用如果是对象唯一引用，则被回收并释放内存
+       * 方法：add() has() delete()
+       * 不接受任何原始值--会报错--只接受对象值
+       * 弱引用，weakKey3=null---weakSet的引用也被移除
+       * 不可迭代
+       * 不支持size
+       * 不能通过程序本身检测其中内容
+       */
+      WeakSet(){
+          let weakKey1={},weakKey2={},weakKey3=[],weakSet=new WeakSet([weakKey1,weakKey2]);
+          weakSet.add(weakKey3);
+
+          weakKey3=null;
+        //   let weakKey1={},weakKey2={},weakSet=new WeakSet([weakKey1,weakKey2,45]);//报错
+          console.log(weakSet,weakSet.has(weakKey1));
+      },
+      /**Map
+       * 存储键值对的有序列表
+       * Object.is() --- 键名的等价性判断
+       * 可以直接用对象作为对象的属性名----不修改对象本身添加信息
+       * size 
+       * has()
+       * delete()
+       * clear()
+       * forEach(index,key,mapSelf)
+       */
+      es6Map(){
+        let map = new Map();
+        map.set('title','title1');//map中新增值
+        map.set('year','2019');
+        console.log(map.get('title'));//获取信息
+        let keyObj = {
+            name:'keyObj'
+        }
+        map.set(keyObj,'我是对象作为属性名');
+        console.log(map.get(keyObj));
+
+        let mapInit = new Map(['name','jo'],['age',25]);//传入数组初始化map，可有效防止属性转换
+      },
+      /**WeakMap
+       * 保存dom
+       * 弱引用map，存储对象的弱引用
+       * 键名必须为对象
+       * 弱引用外无其他强引用，垃圾回收同时移除weakMap中的键值对
+       */
+      WeakMap(){
 
       }
    },
    mounted(){
-      this.es6Set();
+    //   this.es6Set();
+    //   this.WeakSet();
+      this.es6Map();
    }
  }
 </script>
