@@ -10,7 +10,7 @@
           <div v-show="isMenu" @click="isMenu=false">隐藏</div>
         </div>
       </div>
-      <div style="background:#eee;padding:20px;width: calc( 100% - 20px) ;" id="newImg">
+      <div style="background:#eee;padding:20px;width: calc( 30% - 20px) ;" id="newImg">
         <div @click="toImage">生产画布</div>
         <div class="imageWrapper" ref="imageWrapper">
             <img class="real_pic" :src="dataURL" />
